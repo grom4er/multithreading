@@ -1,3 +1,5 @@
+package multithreading;
+
 import org.apache.log4j.Logger;
 
 public class MyThread extends Thread {
@@ -12,12 +14,12 @@ public class MyThread extends Thread {
 
     @Override
     public void run() {
-        logger.info("MyThread thread started:" + System.lineSeparator());
+        logger.info("multithreading.MyThread thread started:" + System.lineSeparator());
         while (counter.getValue() < maxValue) {
             logger.info(Thread.currentThread().getName() + " value = "
                     + counter.getValue() + System.lineSeparator());
             counter.increment();
         }
-        logger.info("MyThread finished." + System.lineSeparator());
+        logger.info("multithreading.MyThread finished." + System.lineSeparator());
     }
 }

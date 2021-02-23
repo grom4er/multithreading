@@ -1,3 +1,5 @@
+package multithreading;
+
 import org.apache.log4j.Logger;
 
 public class MyRunnable implements Runnable {
@@ -12,12 +14,12 @@ public class MyRunnable implements Runnable {
 
     @Override
     public void run() {
-        logger.info("MyRunnable thread started:" + System.lineSeparator());
+        logger.info("multithreading.MyRunnable thread started:" + System.lineSeparator());
         while (counter.getValue() < maxValue) {
             logger.info(Thread.currentThread().getName() + " value = "
                     + counter.getValue() + System.lineSeparator());
             counter.increment();
         }
-        logger.info("MyRunnable finished." + System.lineSeparator());
+        logger.info("multithreading.MyRunnable finished." + System.lineSeparator());
     }
 }

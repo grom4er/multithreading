@@ -1,3 +1,5 @@
+package multithreading;
+
 public class Counter {
     private int value = 0;
 

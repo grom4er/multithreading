@@ -1,3 +1,5 @@
+package multithreading;
+
 public class Main {
     private static final int MAX_VALUE = 100;
 
