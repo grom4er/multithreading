@@ -13,7 +13,8 @@ public class MyThread extends Thread {
         logger.info("MyThread thread started:" + System.lineSeparator());
         for (int i = 0; i < 100; i++) {
             logger.info(Thread.currentThread().getName() + " value = "
-                    + counter.increment() + System.lineSeparator());
+                    +  + counter.getValue() + System.lineSeparator());
+            counter.increment();
         }
         logger.info("MyThread finished." + System.lineSeparator());
     }

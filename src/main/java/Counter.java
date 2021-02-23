@@ -1,11 +1,11 @@
 public class Counter {
     private static int value = 0;
 
-    public int increment() {
-       return ++value;
+    public void increment() {
+        ++value;
     }
 
-    public static int getValue() {
+    public int getValue() {
         return value;
     }
 }
