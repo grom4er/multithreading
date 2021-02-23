@@ -3,7 +3,7 @@ import org.apache.log4j.Logger;
 public class MyThread extends Thread {
     private static final Logger logger = Logger.getLogger(MyThread.class);
     private Counter counter;
-    int maxValue;
+    private int maxValue;
 
     public MyThread(Counter counter, int maxValue) {
         this.counter = counter;
