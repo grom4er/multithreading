@@ -20,15 +20,15 @@ public class SumExecutorService {
         List<List<Integer>> subList = ListUtils.partition(
                 integerList, integerList.size() / THREAD_COUNT);
         ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
-        List<CallableThread> callableThreads = subList.stream()
-                .map(CallableThread::new)
+        List<SumCalculatorCallable> sumCalculatorCallables = subList.stream()
+                .map(SumCalculatorCallable::new)
                 .collect(Collectors.toList());
         try {
-            executorService.invokeAll(callableThreads);
+            executorService.invokeAll(sumCalculatorCallables);
         } catch (InterruptedException e) {
             throw new MultithreadingException("Can't invoke treads.", e);
         }
-        return callableThreads.stream()
+        return sumCalculatorCallables.stream()
                 .mapToLong(x -> {
                     try {
                         return executorService.submit(x).get();

@@ -17,10 +17,10 @@ public class SumWithForJoin {
     public Long getSumOfList() {
         List<List<Integer>> subList = ListUtils.partition(
                 integerList, integerList.size() / THREAD_COUNT);
-        List<RecursiveThread> recursiveThreads = subList.stream()
-                .map(RecursiveThread::new)
+        List<RecursiveSumCalculator> recursiveSumCalculators = subList.stream()
+                .map(RecursiveSumCalculator::new)
                 .collect(Collectors.toList());
-        Collection<RecursiveThread> invokedThreads = ForkJoinTask.invokeAll(recursiveThreads);
+        Collection<RecursiveSumCalculator> invokedThreads = ForkJoinTask.invokeAll(recursiveSumCalculators);
         return invokedThreads.stream()
                 .mapToLong(ForkJoinTask::join)
                 .reduce(0, Long::sum);

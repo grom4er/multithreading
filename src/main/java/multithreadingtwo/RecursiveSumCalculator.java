@@ -3,10 +3,10 @@ package multithreadingtwo;
 import java.util.List;
 import java.util.concurrent.RecursiveTask;
 
-public class RecursiveThread extends RecursiveTask<Integer> {
+public class RecursiveSumCalculator extends RecursiveTask<Integer> {
     private List<Integer> list;
 
-    public RecursiveThread(List<Integer> list) {
+    public RecursiveSumCalculator(List<Integer> list) {
         this.list = list;
     }
 
